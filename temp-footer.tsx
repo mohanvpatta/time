@@ -1,4 +1,5 @@
-import { ReactNode, useState } from "react";
+import { motion } from "framer-motion";
+import { ReactNode, useEffect, useState } from "react";
 import { UploadIcon, WindowIcon, WindowsGroupIcon } from "../utils/icons";
 
 const FooterButton = ({
@@ -13,14 +14,18 @@ const FooterButton = ({
   updateHovered: (label: string) => void;
 }) => {
   return (
-    <div
+    <motion.div
       className="relative"
       onMouseEnter={() => {
         updateHovered(label);
       }}
     >
       {hovered && (
-        <div className="absolute inset-0 bg-noir-12  border border-noir-15 rounded-[4px]" />
+        <motion.div
+          layoutId="active"
+          className="absolute inset-0 bg-noir-12  border border-noir-15 rounded-[4px]"
+          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+        />
       )}
       <div
         className={`flex flex-col items-center justify-center w-[136px] h-[74px] gap-2.5 relative z-20 cursor-pointer ${
@@ -35,7 +40,7 @@ const FooterButton = ({
           {label}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -15,10 +15,6 @@ html {
 
   color: #bababa;
   box-sizing: border-box;
-
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
 #root {
@@ -35,12 +31,39 @@ body {
   height: 0;
 }
 
-.noir-gradient {
+.gradient-for-bottom {
   background: linear-gradient(
-    180deg,
+    to top,
+    rgba(25, 25, 25, 1) 30%,
+    rgba(25, 25, 25, 0.5) 60%,
+    rgba(25, 25, 25, 0) 100%
+  );
+}
+
+.gradient-for-top {
+  background: linear-gradient(
+    to top,
     rgba(25, 25, 25, 0) 0%,
     rgba(25, 25, 25, 0.5) 65.1%,
     #191919 100%
+  );
+}
+
+.modal-gradient-for-top {
+  background: linear-gradient(
+    to bottom,
+    #242424 20%,
+    rgba(36, 36, 36, 0.5) 50%,
+    rgba(36, 36, 36, 0) 100%
+  );
+}
+
+.modal-gradient-for-bottom {
+  background: linear-gradient(
+    to top,
+    #242424 20%,
+    rgba(36, 36, 36, 0.5) 50%,
+    rgba(36, 36, 36, 0) 100%
   );
 }
 

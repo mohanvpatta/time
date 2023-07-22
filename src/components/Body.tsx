@@ -464,7 +464,7 @@ const Body = () => {
 
   return (
     <>
-      <div className="relative bg-noir-16 flex flex-col gap-6 pt-6 pm-20 max-h-[350px]">
+      <div className="relative bg-noir-16 flex flex-col gap-6 pt-6 pm-20 max-h-[350px] overflow-y-scroll">
         {dayGroups.map((dayGroup) => {
           return (
             <DayGroup
